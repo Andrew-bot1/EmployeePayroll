@@ -28,18 +28,181 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.lblFirstName = new System.Windows.Forms.Label();
+            this.lblLastName = new System.Windows.Forms.Label();
+            this.lblSSN = new System.Windows.Forms.Label();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
+            this.lblWkSal = new System.Windows.Forms.Label();
+            this.txtLastName = new System.Windows.Forms.TextBox();
+            this.txtSSN = new System.Windows.Forms.TextBox();
+            this.txtHrSal = new System.Windows.Forms.TextBox();
+            this.lblHrSal = new System.Windows.Forms.Label();
+            this.lblComRat = new System.Windows.Forms.Label();
+            this.txtComRat = new System.Windows.Forms.TextBox();
+            this.lblHrs = new System.Windows.Forms.Label();
+            this.txtHrs = new System.Windows.Forms.TextBox();
+            this.txtSlsAmt = new System.Windows.Forms.TextBox();
+            this.lblSlsAmt = new System.Windows.Forms.Label();
+            this.txtWkSal = new System.Windows.Forms.TextBox();
             this.radSalEmp = new System.Windows.Forms.RadioButton();
             this.radHrEmp = new System.Windows.Forms.RadioButton();
             this.radComEmp = new System.Windows.Forms.RadioButton();
-            this.txtFirstName = new System.Windows.Forms.TextBox();
-            this.txtSSN = new System.Windows.Forms.TextBox();
-            this.txtLastName = new System.Windows.Forms.TextBox();
-            this.lblLastName = new System.Windows.Forms.Label();
-            this.lblSSN = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtWklySal = new System.Windows.Forms.TextBox();
-            this.lblFirstName = new System.Windows.Forms.Label();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // lblFirstName
+            // 
+            this.lblFirstName.AutoSize = true;
+            this.lblFirstName.Location = new System.Drawing.Point(548, 106);
+            this.lblFirstName.Name = "lblFirstName";
+            this.lblFirstName.Size = new System.Drawing.Size(57, 13);
+            this.lblFirstName.TabIndex = 11;
+            this.lblFirstName.Text = "First Name";
+            this.lblFirstName.UseWaitCursor = true;
+            // 
+            // lblLastName
+            // 
+            this.lblLastName.AutoSize = true;
+            this.lblLastName.Location = new System.Drawing.Point(548, 129);
+            this.lblLastName.Name = "lblLastName";
+            this.lblLastName.Size = new System.Drawing.Size(58, 13);
+            this.lblLastName.TabIndex = 12;
+            this.lblLastName.Text = "Last Name";
+            this.lblLastName.UseWaitCursor = true;
+            // 
+            // lblSSN
+            // 
+            this.lblSSN.AutoSize = true;
+            this.lblSSN.Location = new System.Drawing.Point(548, 154);
+            this.lblSSN.Name = "lblSSN";
+            this.lblSSN.Size = new System.Drawing.Size(29, 13);
+            this.lblSSN.TabIndex = 13;
+            this.lblSSN.Text = "SSN";
+            this.lblSSN.UseWaitCursor = true;
+            // 
+            // txtFirstName
+            // 
+            this.txtFirstName.Location = new System.Drawing.Point(442, 99);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(100, 20);
+            this.txtFirstName.TabIndex = 14;
+            this.txtFirstName.UseWaitCursor = true;
+            // 
+            // lblWkSal
+            // 
+            this.lblWkSal.AutoSize = true;
+            this.lblWkSal.Location = new System.Drawing.Point(548, 177);
+            this.lblWkSal.Name = "lblWkSal";
+            this.lblWkSal.Size = new System.Drawing.Size(75, 13);
+            this.lblWkSal.TabIndex = 15;
+            this.lblWkSal.Text = "Weekly Salary";
+            this.lblWkSal.UseWaitCursor = true;
+            this.lblWkSal.Visible = false;
+            // 
+            // txtLastName
+            // 
+            this.txtLastName.Location = new System.Drawing.Point(442, 125);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(100, 20);
+            this.txtLastName.TabIndex = 16;
+            this.txtLastName.UseWaitCursor = true;
+            // 
+            // txtSSN
+            // 
+            this.txtSSN.Location = new System.Drawing.Point(442, 151);
+            this.txtSSN.Name = "txtSSN";
+            this.txtSSN.Size = new System.Drawing.Size(100, 20);
+            this.txtSSN.TabIndex = 17;
+            this.txtSSN.UseWaitCursor = true;
+            // 
+            // txtHrSal
+            // 
+            this.txtHrSal.Location = new System.Drawing.Point(442, 177);
+            this.txtHrSal.Name = "txtHrSal";
+            this.txtHrSal.Size = new System.Drawing.Size(100, 20);
+            this.txtHrSal.TabIndex = 19;
+            this.txtHrSal.UseWaitCursor = true;
+            this.txtHrSal.Visible = false;
+            // 
+            // lblHrSal
+            // 
+            this.lblHrSal.AutoSize = true;
+            this.lblHrSal.Location = new System.Drawing.Point(548, 180);
+            this.lblHrSal.Name = "lblHrSal";
+            this.lblHrSal.Size = new System.Drawing.Size(69, 13);
+            this.lblHrSal.TabIndex = 20;
+            this.lblHrSal.Text = "Hourly Salary";
+            this.lblHrSal.UseWaitCursor = true;
+            this.lblHrSal.Visible = false;
+            // 
+            // lblComRat
+            // 
+            this.lblComRat.AutoSize = true;
+            this.lblComRat.Location = new System.Drawing.Point(548, 180);
+            this.lblComRat.Name = "lblComRat";
+            this.lblComRat.Size = new System.Drawing.Size(83, 13);
+            this.lblComRat.TabIndex = 21;
+            this.lblComRat.Text = "Commision Rate";
+            this.lblComRat.UseWaitCursor = true;
+            this.lblComRat.Visible = false;
+            // 
+            // txtComRat
+            // 
+            this.txtComRat.Location = new System.Drawing.Point(442, 177);
+            this.txtComRat.Name = "txtComRat";
+            this.txtComRat.Size = new System.Drawing.Size(100, 20);
+            this.txtComRat.TabIndex = 22;
+            this.txtComRat.UseWaitCursor = true;
+            this.txtComRat.Visible = false;
+            // 
+            // lblHrs
+            // 
+            this.lblHrs.AutoSize = true;
+            this.lblHrs.Location = new System.Drawing.Point(548, 206);
+            this.lblHrs.Name = "lblHrs";
+            this.lblHrs.Size = new System.Drawing.Size(35, 13);
+            this.lblHrs.TabIndex = 23;
+            this.lblHrs.Text = "Hours";
+            this.lblHrs.UseWaitCursor = true;
+            this.lblHrs.Visible = false;
+            // 
+            // txtHrs
+            // 
+            this.txtHrs.Location = new System.Drawing.Point(442, 206);
+            this.txtHrs.Name = "txtHrs";
+            this.txtHrs.Size = new System.Drawing.Size(100, 20);
+            this.txtHrs.TabIndex = 24;
+            this.txtHrs.UseWaitCursor = true;
+            this.txtHrs.Visible = false;
+            // 
+            // txtSlsAmt
+            // 
+            this.txtSlsAmt.Location = new System.Drawing.Point(442, 206);
+            this.txtSlsAmt.Name = "txtSlsAmt";
+            this.txtSlsAmt.Size = new System.Drawing.Size(100, 20);
+            this.txtSlsAmt.TabIndex = 25;
+            this.txtSlsAmt.UseWaitCursor = true;
+            this.txtSlsAmt.Visible = false;
+            // 
+            // lblSlsAmt
+            // 
+            this.lblSlsAmt.AutoSize = true;
+            this.lblSlsAmt.Location = new System.Drawing.Point(548, 206);
+            this.lblSlsAmt.Name = "lblSlsAmt";
+            this.lblSlsAmt.Size = new System.Drawing.Size(72, 13);
+            this.lblSlsAmt.TabIndex = 26;
+            this.lblSlsAmt.Text = "Sales Amount";
+            this.lblSlsAmt.UseWaitCursor = true;
+            this.lblSlsAmt.Visible = false;
+            // 
+            // txtWkSal
+            // 
+            this.txtWkSal.Location = new System.Drawing.Point(442, 177);
+            this.txtWkSal.Name = "txtWkSal";
+            this.txtWkSal.Size = new System.Drawing.Size(100, 20);
+            this.txtWkSal.TabIndex = 27;
+            this.txtWkSal.UseWaitCursor = true;
+            this.txtWkSal.Visible = false;
             // 
             // radSalEmp
             // 
@@ -65,6 +228,7 @@
             this.radHrEmp.Text = "Hourly Employee";
             this.radHrEmp.UseVisualStyleBackColor = true;
             this.radHrEmp.UseWaitCursor = true;
+            this.radHrEmp.CheckedChanged += new System.EventHandler(this.radHrEmp_CheckedChanged);
             // 
             // radComEmp
             // 
@@ -77,97 +241,40 @@
             this.radComEmp.Text = "Commision Employee";
             this.radComEmp.UseVisualStyleBackColor = true;
             this.radComEmp.UseWaitCursor = true;
+            this.radComEmp.CheckedChanged += new System.EventHandler(this.radComEmp_CheckedChanged);
             // 
-            // txtFirstName
+            // btnAdd
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(442, 103);
-            this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(100, 20);
-            this.txtFirstName.TabIndex = 3;
-            this.txtFirstName.UseWaitCursor = true;
-            this.txtFirstName.Visible = false;
-            // 
-            // txtSSN
-            // 
-            this.txtSSN.Location = new System.Drawing.Point(442, 155);
-            this.txtSSN.Name = "txtSSN";
-            this.txtSSN.Size = new System.Drawing.Size(100, 20);
-            this.txtSSN.TabIndex = 4;
-            this.txtSSN.UseWaitCursor = true;
-            this.txtSSN.Visible = false;
-            // 
-            // txtLastName
-            // 
-            this.txtLastName.Location = new System.Drawing.Point(442, 129);
-            this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(100, 20);
-            this.txtLastName.TabIndex = 5;
-            this.txtLastName.UseWaitCursor = true;
-            this.txtLastName.Visible = false;
-            // 
-            // lblLastName
-            // 
-            this.lblLastName.AutoSize = true;
-            this.lblLastName.Location = new System.Drawing.Point(548, 131);
-            this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(58, 13);
-            this.lblLastName.TabIndex = 7;
-            this.lblLastName.Text = "Last Name";
-            this.lblLastName.Visible = false;
-            // 
-            // lblSSN
-            // 
-            this.lblSSN.AutoSize = true;
-            this.lblSSN.Location = new System.Drawing.Point(548, 156);
-            this.lblSSN.Name = "lblSSN";
-            this.lblSSN.Size = new System.Drawing.Size(29, 13);
-            this.lblSSN.TabIndex = 8;
-            this.lblSSN.Text = "SSN";
-            this.lblSSN.UseWaitCursor = true;
-            this.lblSSN.Visible = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(548, 182);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Weekly Salary";
-            this.label4.UseWaitCursor = true;
-            this.label4.Visible = false;
-            // 
-            // txtWklySal
-            // 
-            this.txtWklySal.Location = new System.Drawing.Point(442, 181);
-            this.txtWklySal.Name = "txtWklySal";
-            this.txtWklySal.Size = new System.Drawing.Size(100, 20);
-            this.txtWklySal.TabIndex = 9;
-            this.txtWklySal.UseWaitCursor = true;
-            this.txtWklySal.Visible = false;
-            // 
-            // lblFirstName
-            // 
-            this.lblFirstName.AutoSize = true;
-            this.lblFirstName.Location = new System.Drawing.Point(548, 106);
-            this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(35, 13);
-            this.lblFirstName.TabIndex = 11;
-            this.lblFirstName.Text = "label1";
+            this.btnAdd.Location = new System.Drawing.Point(267, 247);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(164, 23);
+            this.btnAdd.TabIndex = 28;
+            this.btnAdd.Text = "Add Employee";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.lblFirstName);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtWklySal);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.txtWkSal);
+            this.Controls.Add(this.lblSlsAmt);
+            this.Controls.Add(this.txtSlsAmt);
+            this.Controls.Add(this.txtHrs);
+            this.Controls.Add(this.lblHrs);
+            this.Controls.Add(this.txtComRat);
+            this.Controls.Add(this.lblComRat);
+            this.Controls.Add(this.lblHrSal);
+            this.Controls.Add(this.txtHrSal);
+            this.Controls.Add(this.txtSSN);
+            this.Controls.Add(this.txtLastName);
+            this.Controls.Add(this.lblWkSal);
+            this.Controls.Add(this.txtFirstName);
             this.Controls.Add(this.lblSSN);
             this.Controls.Add(this.lblLastName);
-            this.Controls.Add(this.txtLastName);
-            this.Controls.Add(this.txtSSN);
-            this.Controls.Add(this.txtFirstName);
+            this.Controls.Add(this.lblFirstName);
             this.Controls.Add(this.radComEmp);
             this.Controls.Add(this.radHrEmp);
             this.Controls.Add(this.radSalEmp);
@@ -181,18 +288,26 @@
         }
 
         #endregion
-
+        private System.Windows.Forms.Label lblFirstName;
+        private System.Windows.Forms.Label lblLastName;
+        private System.Windows.Forms.Label lblSSN;
+        private System.Windows.Forms.TextBox txtFirstName;
+        private System.Windows.Forms.Label lblWkSal;
+        private System.Windows.Forms.TextBox txtLastName;
+        private System.Windows.Forms.TextBox txtSSN;
+        private System.Windows.Forms.TextBox txtHrSal;
+        private System.Windows.Forms.Label lblHrSal;
+        private System.Windows.Forms.Label lblComRat;
+        private System.Windows.Forms.TextBox txtComRat;
+        private System.Windows.Forms.Label lblHrs;
+        private System.Windows.Forms.TextBox txtHrs;
+        private System.Windows.Forms.TextBox txtSlsAmt;
+        private System.Windows.Forms.Label lblSlsAmt;
+        private System.Windows.Forms.TextBox txtWkSal;
         private System.Windows.Forms.RadioButton radSalEmp;
         private System.Windows.Forms.RadioButton radHrEmp;
         private System.Windows.Forms.RadioButton radComEmp;
-        private System.Windows.Forms.TextBox txtFirstName;
-        private System.Windows.Forms.TextBox txtSSN;
-        private System.Windows.Forms.TextBox txtLastName;
-        private System.Windows.Forms.Label lblLastName;
-        private System.Windows.Forms.Label lblSSN;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtWklySal;
-        private System.Windows.Forms.Label lblFirstName;
+        private System.Windows.Forms.Button btnAdd;
     }
 }
 

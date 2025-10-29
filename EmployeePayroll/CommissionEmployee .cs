@@ -8,10 +8,10 @@ namespace EmployeePayroll
 {
     internal class CommissionEmployee : Employee
     {
-        public int SalesAmount { get; }
+        public decimal SalesAmount { get; }
         public decimal CommissionRate { get; }
 
-        public CommissionEmployee(string fName, string lName, string ssn, int salesAmount, decimal commissionRate) : base(fName, lName, ssn)
+        public CommissionEmployee(string fName, string lName, string ssn, decimal salesAmount, decimal commissionRate) : base(fName, lName, ssn)
         {
             SalesAmount = salesAmount;
             CommissionRate = commissionRate;
