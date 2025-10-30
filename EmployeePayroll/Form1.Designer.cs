@@ -268,6 +268,7 @@
             // lblErrors
             // 
             this.lblErrors.AutoSize = true;
+            this.lblErrors.ForeColor = System.Drawing.Color.Red;
             this.lblErrors.Location = new System.Drawing.Point(497, 276);
             this.lblErrors.Name = "lblErrors";
             this.lblErrors.Size = new System.Drawing.Size(0, 13);
