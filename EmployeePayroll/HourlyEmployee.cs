@@ -31,7 +31,7 @@ namespace EmployeePayroll
 
         public override string ToString()
         {
-            return FirstName + " " + LastName + "\n SSN: " + SSN + "\n Hours Worked: " + Hours + "\n Earnings: " + Earnings();
+            return "Hourly Employee " + FirstName + " " + LastName + "\n SSN: " + SSN + "\n Hours Worked: " + Hours + "\n Earnings: " + Earnings();
         }
     }
 }
