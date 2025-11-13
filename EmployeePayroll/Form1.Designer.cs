@@ -51,12 +51,18 @@
             this.lblOutput = new System.Windows.Forms.Label();
             this.lblErrors = new System.Windows.Forms.Label();
             this.lstOutput = new System.Windows.Forms.ListBox();
+            this.btnSelect = new System.Windows.Forms.Button();
+            this.lblSelect = new System.Windows.Forms.Label();
+            this.btnLoad = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblFirstName
             // 
             this.lblFirstName.AutoSize = true;
-            this.lblFirstName.Location = new System.Drawing.Point(585, 84);
+            this.lblFirstName.Location = new System.Drawing.Point(419, 60);
             this.lblFirstName.Name = "lblFirstName";
             this.lblFirstName.Size = new System.Drawing.Size(57, 13);
             this.lblFirstName.TabIndex = 11;
@@ -66,7 +72,7 @@
             // lblLastName
             // 
             this.lblLastName.AutoSize = true;
-            this.lblLastName.Location = new System.Drawing.Point(585, 107);
+            this.lblLastName.Location = new System.Drawing.Point(419, 83);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(58, 13);
             this.lblLastName.TabIndex = 12;
@@ -76,7 +82,7 @@
             // lblSSN
             // 
             this.lblSSN.AutoSize = true;
-            this.lblSSN.Location = new System.Drawing.Point(585, 132);
+            this.lblSSN.Location = new System.Drawing.Point(419, 108);
             this.lblSSN.Name = "lblSSN";
             this.lblSSN.Size = new System.Drawing.Size(29, 13);
             this.lblSSN.TabIndex = 13;
@@ -85,7 +91,7 @@
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(479, 77);
+            this.txtFirstName.Location = new System.Drawing.Point(313, 53);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(100, 20);
             this.txtFirstName.TabIndex = 14;
@@ -94,7 +100,7 @@
             // lblWkSal
             // 
             this.lblWkSal.AutoSize = true;
-            this.lblWkSal.Location = new System.Drawing.Point(585, 155);
+            this.lblWkSal.Location = new System.Drawing.Point(419, 131);
             this.lblWkSal.Name = "lblWkSal";
             this.lblWkSal.Size = new System.Drawing.Size(75, 13);
             this.lblWkSal.TabIndex = 15;
@@ -104,7 +110,7 @@
             // 
             // txtLastName
             // 
-            this.txtLastName.Location = new System.Drawing.Point(479, 103);
+            this.txtLastName.Location = new System.Drawing.Point(313, 79);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(100, 20);
             this.txtLastName.TabIndex = 16;
@@ -112,7 +118,7 @@
             // 
             // txtSSN
             // 
-            this.txtSSN.Location = new System.Drawing.Point(479, 129);
+            this.txtSSN.Location = new System.Drawing.Point(313, 105);
             this.txtSSN.Name = "txtSSN";
             this.txtSSN.Size = new System.Drawing.Size(100, 20);
             this.txtSSN.TabIndex = 17;
@@ -120,7 +126,7 @@
             // 
             // txtHrSal
             // 
-            this.txtHrSal.Location = new System.Drawing.Point(479, 155);
+            this.txtHrSal.Location = new System.Drawing.Point(313, 131);
             this.txtHrSal.Name = "txtHrSal";
             this.txtHrSal.Size = new System.Drawing.Size(100, 20);
             this.txtHrSal.TabIndex = 19;
@@ -130,7 +136,7 @@
             // lblHrSal
             // 
             this.lblHrSal.AutoSize = true;
-            this.lblHrSal.Location = new System.Drawing.Point(585, 158);
+            this.lblHrSal.Location = new System.Drawing.Point(419, 134);
             this.lblHrSal.Name = "lblHrSal";
             this.lblHrSal.Size = new System.Drawing.Size(69, 13);
             this.lblHrSal.TabIndex = 20;
@@ -141,7 +147,7 @@
             // lblComRat
             // 
             this.lblComRat.AutoSize = true;
-            this.lblComRat.Location = new System.Drawing.Point(585, 158);
+            this.lblComRat.Location = new System.Drawing.Point(419, 134);
             this.lblComRat.Name = "lblComRat";
             this.lblComRat.Size = new System.Drawing.Size(83, 13);
             this.lblComRat.TabIndex = 21;
@@ -151,7 +157,7 @@
             // 
             // txtComRat
             // 
-            this.txtComRat.Location = new System.Drawing.Point(479, 155);
+            this.txtComRat.Location = new System.Drawing.Point(313, 131);
             this.txtComRat.Name = "txtComRat";
             this.txtComRat.Size = new System.Drawing.Size(100, 20);
             this.txtComRat.TabIndex = 22;
@@ -161,7 +167,7 @@
             // lblHrs
             // 
             this.lblHrs.AutoSize = true;
-            this.lblHrs.Location = new System.Drawing.Point(585, 184);
+            this.lblHrs.Location = new System.Drawing.Point(419, 160);
             this.lblHrs.Name = "lblHrs";
             this.lblHrs.Size = new System.Drawing.Size(35, 13);
             this.lblHrs.TabIndex = 23;
@@ -171,7 +177,7 @@
             // 
             // txtHrs
             // 
-            this.txtHrs.Location = new System.Drawing.Point(479, 184);
+            this.txtHrs.Location = new System.Drawing.Point(313, 160);
             this.txtHrs.Name = "txtHrs";
             this.txtHrs.Size = new System.Drawing.Size(100, 20);
             this.txtHrs.TabIndex = 24;
@@ -180,7 +186,7 @@
             // 
             // txtSlsAmt
             // 
-            this.txtSlsAmt.Location = new System.Drawing.Point(479, 184);
+            this.txtSlsAmt.Location = new System.Drawing.Point(313, 160);
             this.txtSlsAmt.Name = "txtSlsAmt";
             this.txtSlsAmt.Size = new System.Drawing.Size(100, 20);
             this.txtSlsAmt.TabIndex = 25;
@@ -190,7 +196,7 @@
             // lblSlsAmt
             // 
             this.lblSlsAmt.AutoSize = true;
-            this.lblSlsAmt.Location = new System.Drawing.Point(585, 184);
+            this.lblSlsAmt.Location = new System.Drawing.Point(419, 160);
             this.lblSlsAmt.Name = "lblSlsAmt";
             this.lblSlsAmt.Size = new System.Drawing.Size(72, 13);
             this.lblSlsAmt.TabIndex = 26;
@@ -200,7 +206,7 @@
             // 
             // txtWkSal
             // 
-            this.txtWkSal.Location = new System.Drawing.Point(479, 155);
+            this.txtWkSal.Location = new System.Drawing.Point(313, 131);
             this.txtWkSal.Name = "txtWkSal";
             this.txtWkSal.Size = new System.Drawing.Size(100, 20);
             this.txtWkSal.TabIndex = 27;
@@ -210,7 +216,7 @@
             // radSalEmp
             // 
             this.radSalEmp.AutoSize = true;
-            this.radSalEmp.Location = new System.Drawing.Point(154, 103);
+            this.radSalEmp.Location = new System.Drawing.Point(12, 84);
             this.radSalEmp.Name = "radSalEmp";
             this.radSalEmp.Size = new System.Drawing.Size(103, 17);
             this.radSalEmp.TabIndex = 0;
@@ -223,7 +229,7 @@
             // radHrEmp
             // 
             this.radHrEmp.AutoSize = true;
-            this.radHrEmp.Location = new System.Drawing.Point(154, 126);
+            this.radHrEmp.Location = new System.Drawing.Point(12, 107);
             this.radHrEmp.Name = "radHrEmp";
             this.radHrEmp.Size = new System.Drawing.Size(104, 17);
             this.radHrEmp.TabIndex = 1;
@@ -236,7 +242,7 @@
             // radComEmp
             // 
             this.radComEmp.AutoSize = true;
-            this.radComEmp.Location = new System.Drawing.Point(154, 149);
+            this.radComEmp.Location = new System.Drawing.Point(12, 130);
             this.radComEmp.Name = "radComEmp";
             this.radComEmp.Size = new System.Drawing.Size(124, 17);
             this.radComEmp.TabIndex = 2;
@@ -248,9 +254,9 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(300, 220);
+            this.btnAdd.Location = new System.Drawing.Point(154, 209);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(164, 23);
+            this.btnAdd.Size = new System.Drawing.Size(85, 23);
             this.btnAdd.TabIndex = 28;
             this.btnAdd.Text = "Add Employee";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -279,17 +285,79 @@
             // lstOutput
             // 
             this.lstOutput.FormattingEnabled = true;
-            this.lstOutput.Location = new System.Drawing.Point(32, 276);
+            this.lstOutput.Location = new System.Drawing.Point(12, 276);
             this.lstOutput.Name = "lstOutput";
-            this.lstOutput.Size = new System.Drawing.Size(373, 186);
+            this.lstOutput.Size = new System.Drawing.Size(404, 342);
             this.lstOutput.TabIndex = 31;
             this.lstOutput.UseWaitCursor = true;
+            // 
+            // btnSelect
+            // 
+            this.btnSelect.Location = new System.Drawing.Point(245, 209);
+            this.btnSelect.Name = "btnSelect";
+            this.btnSelect.Size = new System.Drawing.Size(75, 23);
+            this.btnSelect.TabIndex = 32;
+            this.btnSelect.Text = "Select File";
+            this.btnSelect.UseVisualStyleBackColor = true;
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
+            // 
+            // lblSelect
+            // 
+            this.lblSelect.AutoSize = true;
+            this.lblSelect.Location = new System.Drawing.Point(432, 219);
+            this.lblSelect.Name = "lblSelect";
+            this.lblSelect.Size = new System.Drawing.Size(0, 13);
+            this.lblSelect.TabIndex = 33;
+            // 
+            // btnLoad
+            // 
+            this.btnLoad.Location = new System.Drawing.Point(203, 247);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(75, 23);
+            this.btnLoad.TabIndex = 34;
+            this.btnLoad.Text = "Load";
+            this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(122, 247);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 35;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(203, 102);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(75, 23);
+            this.btnExit.TabIndex = 36;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Location = new System.Drawing.Point(446, 342);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(0, 13);
+            this.lblTotal.TabIndex = 37;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(915, 637);
+            this.ClientSize = new System.Drawing.Size(731, 626);
+            this.Controls.Add(this.lblTotal);
+            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnLoad);
+            this.Controls.Add(this.lblSelect);
+            this.Controls.Add(this.btnSelect);
             this.Controls.Add(this.lstOutput);
             this.Controls.Add(this.lblErrors);
             this.Controls.Add(this.lblOutput);
@@ -346,6 +414,12 @@
         private System.Windows.Forms.Label lblOutput;
         private System.Windows.Forms.Label lblErrors;
         private System.Windows.Forms.ListBox lstOutput;
+        private System.Windows.Forms.Button btnSelect;
+        private System.Windows.Forms.Label lblSelect;
+        private System.Windows.Forms.Button btnLoad;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Label lblTotal;
     }
 }
 

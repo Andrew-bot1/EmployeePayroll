@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ namespace EmployeePayroll
 {
     public partial class Form1 : Form
     {
+        StreamWriter fileWriter;
         List<Employee> allEmps = new List<Employee>();
         List<String> errors = new List<String>();
         public Form1()
@@ -69,98 +71,134 @@ namespace EmployeePayroll
         {
             errors.Clear();
             lblErrors.Text = "";
-            if (radSalEmp.Checked)
+
+            try
             {
-                if (txtFirstName.Text == "" || txtLastName.Text == "" || txtSSN.Text == "" || txtWkSal.Text == "")
-                {
-                    errors.Add("Please fill in all fields.");
-                }
-                else
-                {
-                    if (txtSSN.Text.Length != 9)
-                    {
-                        errors.Add("SSN must be 9 digits.");
-                    }
-                    if (decimal.TryParse(txtWkSal.Text, out _) == false)
-                    {
-                        errors.Add("Weekly Salary must be a valid decimal number.");
-                    }
-                    else if (Convert.ToDecimal(txtWkSal.Text) < 0)
-                    {
-                        errors.Add("Weekly Salary must be a positive number.");
-                    }
-                    if (errors.Count == 0)
-                    {
-                        SalaryEmployee salEmp = new SalaryEmployee(txtFirstName.Text, txtLastName.Text, txtSSN.Text, Convert.ToDecimal(txtWkSal.Text));
-                        allEmps.Add(salEmp);
-                    }
-                }
+                //string fName = txtFirstName.Text;
+                //string lName = txtLastName.Text;
                 
+                //txtFirstName.Text = "";
+                //txtLastName.Text = "";
+                //txtFirstName.Focus();
+
+
+                if (radSalEmp.Checked)
+                {
+                    if (txtFirstName.Text == "" || txtLastName.Text == "" || txtSSN.Text == "" || txtWkSal.Text == "")
+                    {
+                        errors.Add("Please fill in all fields.");
+                    }
+                    else
+                    {
+                        if (txtSSN.Text.Length != 9)
+                        {
+                            errors.Add("SSN must be 9 digits.");
+                        }
+                        if (decimal.TryParse(txtWkSal.Text, out _) == false)
+                        {
+                            errors.Add("Weekly Salary must be a valid decimal number.");
+                        }
+                        else if (Convert.ToDecimal(txtWkSal.Text) < 0)
+                        {
+                            errors.Add("Weekly Salary must be a positive number.");
+                        }
+                        if (errors.Count == 0)
+                        {
+                            SalaryEmployee salEmp = new SalaryEmployee(txtFirstName.Text, txtLastName.Text, txtSSN.Text, Convert.ToDecimal(txtWkSal.Text));
+                            allEmps.Add(salEmp);
+                            fileWriter.WriteLine(salEmp);
+
+                            if (errors.Count == 0)
+                            {
+                                lblErrors.Text = "Employee Added Successfully!";
+                            }
+                        }
+                    }
+
+                }
+                if (radHrEmp.Checked)
+                {
+                    if (txtFirstName.Text == "" || txtLastName.Text == "" || txtSSN.Text == "" || txtHrSal.Text == "" || txtHrs.Text == "")
+                    {
+                        errors.Add("Please fill in all fields.");
+                    }
+                    else
+                    {
+                        if (txtSSN.Text.Length != 9)
+                        {
+                            errors.Add("SSN must be 9 digits.");
+                        }
+                        if (decimal.TryParse(txtHrs.Text, out _) == false)
+                        {
+                            errors.Add("Hours Worked must be a valid decimal number.");
+                        }
+                        else if (Convert.ToDecimal(txtHrs.Text) < 0)
+                        {
+                            errors.Add("Hours Worked must be a positive number.");
+                        }
+                        if (errors.Count == 0)
+                        {
+                            HourlyEmployee hrEmp = new HourlyEmployee(txtFirstName.Text, txtLastName.Text, txtSSN.Text, Convert.ToDecimal(txtHrSal.Text), Convert.ToDecimal(txtHrs.Text));
+                            allEmps.Add(hrEmp);
+                            fileWriter.WriteLine(hrEmp);
+
+                            if (errors.Count == 0)
+                            {
+                                lblErrors.Text = "Employee Added Successfully!";
+                            }
+                        }
+                    }
+
+                }
+                if (radComEmp.Checked)
+                {
+                    if (txtFirstName.Text == "" || txtLastName.Text == "" || txtSSN.Text == "" || txtComRat.Text == "" || txtSlsAmt.Text == "")
+                    {
+                        errors.Add("Please fill in all fields.");
+                    }
+                    else
+                    {
+                        if (txtSSN.Text.Length != 9)
+                        {
+                            errors.Add("SSN must be 9 digits.");
+                        }
+                        if (decimal.TryParse(txtSlsAmt.Text, out _) == false)
+                        {
+                            errors.Add("Sales Amount must be a valid decimal number.");
+                        }
+                        else if (Convert.ToDecimal(txtSlsAmt.Text) < 0)
+                        {
+                            errors.Add("Sales Amount must be a positive number.");
+                        }
+                        if (decimal.TryParse(txtComRat.Text, out _) == false)
+                        {
+                            errors.Add("Commission Rate must be a valid decimal number.");
+                        }
+                        else if (Convert.ToDecimal(txtComRat.Text) < 0 || Convert.ToDecimal(txtComRat.Text) > 1)
+                        {
+                            errors.Add("Commission Rate must be a decimal between 0 and 1.");
+                        }
+                        if (errors.Count == 0)
+                        {
+                            CommissionEmployee comEmp = new CommissionEmployee(txtFirstName.Text, txtLastName.Text, txtSSN.Text, Convert.ToDecimal(txtSlsAmt.Text), Convert.ToDecimal(txtComRat.Text));
+                            allEmps.Add(comEmp);
+                            fileWriter.WriteLine(comEmp);
+
+                            if (errors.Count == 0)
+                            {
+                                lblErrors.Text = "Employee Added Successfully!";
+                            }
+                        }
+                    }
+
+                }
             }
-            if (radHrEmp.Checked)
+            catch (Exception)
             {
-                if (txtFirstName.Text == "" || txtLastName.Text == "" || txtSSN.Text == "" || txtHrSal.Text == "" || txtHrs.Text == "")
-                {
-                    errors.Add("Please fill in all fields.");
-                }
-                else
-                {
-                    if (txtSSN.Text.Length != 9)
-                    {
-                        errors.Add("SSN must be 9 digits.");
-                    }
-                    if (decimal.TryParse(txtHrs.Text, out _) == false)
-                    {
-                        errors.Add("Hours Worked must be a valid decimal number.");
-                    }
-                    else if (Convert.ToDecimal(txtHrs.Text) < 0)
-                    {
-                        errors.Add("Hours Worked must be a positive number.");
-                    }
-                    if (errors.Count == 0)
-                    {
-                        HourlyEmployee hrEmp = new HourlyEmployee(txtFirstName.Text, txtLastName.Text, txtSSN.Text, Convert.ToDecimal(txtHrSal.Text), Convert.ToDecimal(txtHrs.Text));
-                        allEmps.Add(hrEmp);
-                    }
-                }
-                
+                MessageBox.Show("Error writing to specified file", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            if (radComEmp.Checked)
-            {
-                if (txtFirstName.Text == "" || txtLastName.Text == "" || txtSSN.Text == "" || txtComRat.Text == "" || txtSlsAmt.Text == "")
-                {
-                    errors.Add("Please fill in all fields.");
-                }
-                else
-                {
-                    if (txtSSN.Text.Length != 9)
-                    {
-                        errors.Add("SSN must be 9 digits.");
-                    }
-                    if (decimal.TryParse(txtSlsAmt.Text, out _) == false)
-                    {
-                        errors.Add("Sales Amount must be a valid decimal number.");
-                    }
-                    else if (Convert.ToDecimal(txtSlsAmt.Text) < 0)
-                    {
-                        errors.Add("Sales Amount must be a positive number.");
-                    }
-                    if (decimal.TryParse(txtComRat.Text, out _) == false)
-                    {
-                        errors.Add("Commission Rate must be a valid decimal number.");
-                    }
-                    else if (Convert.ToDecimal(txtComRat.Text) < 0 || Convert.ToDecimal(txtComRat.Text) > 1)
-                    {
-                        errors.Add("Commission Rate must be a decimal between 0 and 1.");
-                    }
-                    if (errors.Count == 0)
-                    {
-                        CommissionEmployee comEmp = new CommissionEmployee(txtFirstName.Text, txtLastName.Text, txtSSN.Text, Convert.ToDecimal(txtSlsAmt.Text), Convert.ToDecimal(txtComRat.Text));
-                        allEmps.Add(comEmp);
-                    }
-                }
-                
-            }
+
+            
 
             lstOutput.Items.Clear();
 
@@ -173,10 +211,121 @@ namespace EmployeePayroll
                 return;
             }
 
-            foreach (Employee emp in allEmps)
+            
+        }
+
+        private void btnSelect_Click(object sender, EventArgs e)
+        {
+            DialogResult result;
+            string fileName;
+
+            var filePicked = new SaveFileDialog();
+
+            filePicked.CheckFileExists = false;
+            result = filePicked.ShowDialog();
+            fileName = filePicked.FileName;
+
+            lblSelect.Text = fileName;
+
+            if (result == DialogResult.OK)
             {
-                lstOutput.Items.Add(emp.ToString());
+                if (string.IsNullOrEmpty(fileName))
+                {
+                    MessageBox.Show("Invalid File Name or Path", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    try
+                    {
+                        FileStream steam = new FileStream(fileName, FileMode.Append, FileAccess.Write);
+                        fileWriter = new StreamWriter(steam);
+
+                        //btnAddPerson.Enabled = true;
+                        //btnSelectFile.Enabled = false;
+                        //btnSave.Enabled = true;
+                        //btnLoad.Enabled = true;
+                    }
+                    catch (IOException)
+                    {
+                        MessageBox.Show("Error opening specified file", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        fileWriter.Close();
+                        //btnAddPerson.Enabled = false;
+                        //btnSelectFile.Enabled = true;
+                        //btnSave.Enabled = false;
+                        //btnLoad.Enabled = false;
+                    }
+
+                }
             }
+        }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+
+            string filePath = lblSelect.Text;
+            lstOutput.Items.Clear();
+            fileWriter.Close();
+           // string output;
+
+            if (filePath == "No File Selected")
+            {
+                MessageBox.Show("Please select a file first", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            
+            else
+            {
+                try
+                {
+                    StreamReader reader = new StreamReader(filePath);
+                    string currentLine;
+
+                    // System.IO.File.WriteAllLines(reader, allEmps.ToString());
+
+                    while ((currentLine = reader.ReadLine()) != null)
+                    {
+                        int indexOfComa = currentLine.IndexOf(',');
+                        string output = (currentLine.Substring(indexOfComa + 1)) + ",";
+                        lstOutput.Items.Add(output);
+                    }
+                    reader.Close();
+
+                    decimal total = 0;
+
+                    foreach (Employee emp in allEmps)
+                    {
+                        total += emp.Earnings();
+                    }
+
+                    lblTotal.Text = "Total Payroll: $" + total;
+                }
+                catch (IOException)
+                {
+                    MessageBox.Show("Caanot Read File", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                fileWriter.Close();
+                //btnAddPerson.Enabled = false;
+                //btnSelectFile.Enabled = true;
+                //btnSave.Enabled = false;
+                //btnLoad.Enabled = false;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Cannot close file", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

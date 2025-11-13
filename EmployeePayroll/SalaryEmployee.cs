@@ -21,7 +21,7 @@ namespace EmployeePayroll
         }
         public override string ToString()
         {
-            return "Salary Employee " + FirstName + " " + LastName + "\nSSN: " + SSN + "\nWeekly Salary: " + WeeklySalary + "\nEarnings: $" + Earnings();
+            return "Salary Employee " + FirstName + " " + LastName + "\nSSN: " + SSN + "\nWeekly Salary: " + WeeklySalary + "\nEarnings: $" + Earnings() + ",";
         }
     }
 }
