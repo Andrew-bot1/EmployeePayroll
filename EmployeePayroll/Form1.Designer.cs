@@ -50,6 +50,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.lblOutput = new System.Windows.Forms.Label();
             this.lblErrors = new System.Windows.Forms.Label();
+            this.lstOutput = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // lblFirstName
@@ -275,11 +276,21 @@
             this.lblErrors.TabIndex = 30;
             this.lblErrors.UseWaitCursor = true;
             // 
+            // lstOutput
+            // 
+            this.lstOutput.FormattingEnabled = true;
+            this.lstOutput.Location = new System.Drawing.Point(32, 276);
+            this.lstOutput.Name = "lstOutput";
+            this.lstOutput.Size = new System.Drawing.Size(373, 186);
+            this.lstOutput.TabIndex = 31;
+            this.lstOutput.UseWaitCursor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(915, 637);
+            this.Controls.Add(this.lstOutput);
             this.Controls.Add(this.lblErrors);
             this.Controls.Add(this.lblOutput);
             this.Controls.Add(this.btnAdd);
@@ -334,6 +345,7 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label lblOutput;
         private System.Windows.Forms.Label lblErrors;
+        private System.Windows.Forms.ListBox lstOutput;
     }
 }
 

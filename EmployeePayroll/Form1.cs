@@ -162,7 +162,7 @@ namespace EmployeePayroll
                 
             }
 
-           lblOutput.Text = "";
+            lstOutput.Items.Clear();
 
             if (errors.Count > 0)
             {
@@ -175,7 +175,7 @@ namespace EmployeePayroll
 
             foreach (Employee emp in allEmps)
             {
-                lblOutput.Text += emp.ToString() + "\n\n";
+                lstOutput.Items.Add(emp.ToString());
             }
         }
     }
