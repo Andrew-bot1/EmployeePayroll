@@ -84,6 +84,10 @@ namespace EmployeePayroll
 
                 if (radSalEmp.Checked)
                 {
+                    txtFirstName.Text = txtFirstName.Text.Replace(',', ' ');
+                    txtLastName.Text = txtLastName.Text.Replace(',', ' ');
+                    txtSSN.Text = txtSSN.Text.Replace(',', ' ');
+                    txtWkSal.Text = txtWkSal.Text.Replace(',', ' ');
                     if (txtFirstName.Text == "" || txtLastName.Text == "" || txtSSN.Text == "" || txtWkSal.Text == "")
                     {
                         errors.Add("Please fill in all fields.");
@@ -104,8 +108,7 @@ namespace EmployeePayroll
                         }
                         if (errors.Count == 0)
                         {
-                            txtFirstName.Text = txtFirstName.Text.Replace(',', ' ');
-                            txtLastName.Text = txtLastName.Text.Replace(',', ' ');
+                            
 
 
                             SalaryEmployee salEmp = new SalaryEmployee(txtFirstName.Text, txtLastName.Text, txtSSN.Text, Convert.ToDecimal(txtWkSal.Text));
@@ -122,6 +125,11 @@ namespace EmployeePayroll
                 }
                 if (radHrEmp.Checked)
                 {
+                    txtFirstName.Text = txtFirstName.Text.Replace(',', ' ');
+                    txtLastName.Text = txtLastName.Text.Replace(',', ' ');
+                    txtSSN.Text = txtSSN.Text.Replace(',', ' ');
+                    txtHrSal.Text = txtHrSal.Text.Replace(',', ' ');
+                    txtHrs.Text = txtHrs.Text.Replace(',', ' ');
                     if (txtFirstName.Text == "" || txtLastName.Text == "" || txtSSN.Text == "" || txtHrSal.Text == "" || txtHrs.Text == "")
                     {
                         errors.Add("Please fill in all fields.");
@@ -142,8 +150,7 @@ namespace EmployeePayroll
                         }
                         if (errors.Count == 0)
                         {
-                            txtFirstName.Text = txtFirstName.Text.Replace(',', ' ');
-                            txtLastName.Text = txtLastName.Text.Replace(',', ' ');
+                           
 
                             HourlyEmployee hrEmp = new HourlyEmployee(txtFirstName.Text, txtLastName.Text, txtSSN.Text, Convert.ToDecimal(txtHrSal.Text), Convert.ToDecimal(txtHrs.Text));
                             allEmps.Add(hrEmp);
@@ -159,6 +166,11 @@ namespace EmployeePayroll
                 }
                 if (radComEmp.Checked)
                 {
+                    txtFirstName.Text = txtFirstName.Text.Replace(',', ' ');
+                    txtLastName.Text = txtLastName.Text.Replace(',', ' ');
+                    txtSSN.Text = txtSSN.Text.Replace(',', ' ');
+                    txtComRat.Text = txtComRat.Text.Replace(',', ' ');
+                    txtSlsAmt.Text = txtSlsAmt.Text.Replace(',', ' ');
                     if (txtFirstName.Text == "" || txtLastName.Text == "" || txtSSN.Text == "" || txtComRat.Text == "" || txtSlsAmt.Text == "")
                     {
                         errors.Add("Please fill in all fields.");
@@ -187,8 +199,7 @@ namespace EmployeePayroll
                         }
                         if (errors.Count == 0)
                         {
-                            txtFirstName.Text = txtFirstName.Text.Replace(',', ' ');
-                            txtLastName.Text = txtLastName.Text.Replace(',', ' ');
+                            
 
                             CommissionEmployee comEmp = new CommissionEmployee(txtFirstName.Text, txtLastName.Text, txtSSN.Text, Convert.ToDecimal(txtSlsAmt.Text), Convert.ToDecimal(txtComRat.Text));
                             allEmps.Add(comEmp);
