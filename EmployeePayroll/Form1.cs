@@ -104,6 +104,10 @@ namespace EmployeePayroll
                         }
                         if (errors.Count == 0)
                         {
+                            txtFirstName.Text = txtFirstName.Text.Replace(',', ' ');
+                            txtLastName.Text = txtLastName.Text.Replace(',', ' ');
+
+
                             SalaryEmployee salEmp = new SalaryEmployee(txtFirstName.Text, txtLastName.Text, txtSSN.Text, Convert.ToDecimal(txtWkSal.Text));
                             allEmps.Add(salEmp);
                             fileWriter.WriteLine(salEmp);
@@ -138,6 +142,9 @@ namespace EmployeePayroll
                         }
                         if (errors.Count == 0)
                         {
+                            txtFirstName.Text = txtFirstName.Text.Replace(',', ' ');
+                            txtLastName.Text = txtLastName.Text.Replace(',', ' ');
+
                             HourlyEmployee hrEmp = new HourlyEmployee(txtFirstName.Text, txtLastName.Text, txtSSN.Text, Convert.ToDecimal(txtHrSal.Text), Convert.ToDecimal(txtHrs.Text));
                             allEmps.Add(hrEmp);
                             fileWriter.WriteLine(hrEmp);
@@ -180,6 +187,9 @@ namespace EmployeePayroll
                         }
                         if (errors.Count == 0)
                         {
+                            txtFirstName.Text = txtFirstName.Text.Replace(',', ' ');
+                            txtLastName.Text = txtLastName.Text.Replace(',', ' ');
+
                             CommissionEmployee comEmp = new CommissionEmployee(txtFirstName.Text, txtLastName.Text, txtSSN.Text, Convert.ToDecimal(txtSlsAmt.Text), Convert.ToDecimal(txtComRat.Text));
                             allEmps.Add(comEmp);
                             fileWriter.WriteLine(comEmp);
@@ -240,24 +250,30 @@ namespace EmployeePayroll
                         FileStream steam = new FileStream(fileName, FileMode.Append, FileAccess.Write);
                         fileWriter = new StreamWriter(steam);
 
-                        //btnAddPerson.Enabled = true;
-                        //btnSelectFile.Enabled = false;
-                        //btnSave.Enabled = true;
-                        //btnLoad.Enabled = true;
+                        if (fileWriter == null)
+                        {
+                            MessageBox.Show("Error Grtting File", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            btnAdd.Enabled = true;
+                            btnSave.Enabled = true;
+                            btnLoad.Enabled = true;
+                            btnSelect.Enabled = false;
+                        }
                     }
                     catch (IOException)
                     {
                         MessageBox.Show("Error opening specified file", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        fileWriter.Close();
-                        //btnAddPerson.Enabled = false;
-                        //btnSelectFile.Enabled = true;
-                        //btnSave.Enabled = false;
-                        //btnLoad.Enabled = false;
                     }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("An Error Occurred", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        fileWriter.Close();
 
+                    }
                 }
-            }
-        }
+            } }
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
@@ -265,7 +281,7 @@ namespace EmployeePayroll
             string filePath = lblSelect.Text;
             lstOutput.Items.Clear();
             fileWriter.Close();
-           // string output;
+            string output;
 
             if (filePath == "No File Selected")
             {
@@ -285,7 +301,7 @@ namespace EmployeePayroll
                     while ((currentLine = reader.ReadLine()) != null)
                     {
                         int indexOfComa = currentLine.IndexOf(',');
-                        string output = (currentLine.Substring(indexOfComa + 1)) + ",";
+                        output = (currentLine.Substring(indexOfComa + 1)) ;
                         lstOutput.Items.Add(output);
                     }
                     reader.Close();
@@ -303,6 +319,10 @@ namespace EmployeePayroll
                 {
                     MessageBox.Show("Caanot Read File", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                catch (Exception)
+                {
+                    MessageBox.Show("An Error Occurred", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             
         }
@@ -312,6 +332,11 @@ namespace EmployeePayroll
             try
             {
                 fileWriter.Close();
+                btnAdd.Enabled = false;
+                btnSelect.Enabled = true;
+                btnSave.Enabled = false;
+                btnLoad.Enabled = false;
+
                 //btnAddPerson.Enabled = false;
                 //btnSelectFile.Enabled = true;
                 //btnSave.Enabled = false;
@@ -326,6 +351,11 @@ namespace EmployeePayroll
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void txtLastName_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

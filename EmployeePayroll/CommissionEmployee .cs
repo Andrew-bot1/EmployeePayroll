@@ -24,7 +24,7 @@ namespace EmployeePayroll
 
         public override string ToString()
         {
-            return "Commission Employee " + FirstName + " " + LastName + "\nSSN: " + SSN + "\nSales Amount: " + SalesAmount + "\nCommission Rate: " + CommissionRate + "\nEarnings: $" + Earnings() + ",";
+            return "Commission Employee: " + FirstName + " " + LastName + "\nSSN: " + SSN + "\nSales Amount: " + SalesAmount + "\nCommission Rate: " + CommissionRate + "\nEarnings: $" + Earnings() + ",";
         }
     }
 }

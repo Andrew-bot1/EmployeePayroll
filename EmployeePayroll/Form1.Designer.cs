@@ -115,6 +115,7 @@
             this.txtLastName.Size = new System.Drawing.Size(100, 20);
             this.txtLastName.TabIndex = 16;
             this.txtLastName.UseWaitCursor = true;
+            this.txtLastName.TextChanged += new System.EventHandler(this.txtLastName_TextChanged);
             // 
             // txtSSN
             // 
@@ -254,6 +255,7 @@
             // 
             // btnAdd
             // 
+            this.btnAdd.Enabled = false;
             this.btnAdd.Location = new System.Drawing.Point(154, 209);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(85, 23);
@@ -299,6 +301,7 @@
             this.btnSelect.TabIndex = 32;
             this.btnSelect.Text = "Select File";
             this.btnSelect.UseVisualStyleBackColor = true;
+            this.btnSelect.UseWaitCursor = true;
             this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
             // lblSelect
@@ -308,25 +311,30 @@
             this.lblSelect.Name = "lblSelect";
             this.lblSelect.Size = new System.Drawing.Size(0, 13);
             this.lblSelect.TabIndex = 33;
+            this.lblSelect.UseWaitCursor = true;
             // 
             // btnLoad
             // 
+            this.btnLoad.Enabled = false;
             this.btnLoad.Location = new System.Drawing.Point(203, 247);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(75, 23);
             this.btnLoad.TabIndex = 34;
             this.btnLoad.Text = "Load";
             this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.UseWaitCursor = true;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // btnSave
             // 
+            this.btnSave.Enabled = false;
             this.btnSave.Location = new System.Drawing.Point(122, 247);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 35;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.UseWaitCursor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnExit
@@ -337,6 +345,7 @@
             this.btnExit.TabIndex = 36;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.UseWaitCursor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // lblTotal
@@ -346,6 +355,7 @@
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(0, 13);
             this.lblTotal.TabIndex = 37;
+            this.lblTotal.UseWaitCursor = true;
             // 
             // Form1
             // 
